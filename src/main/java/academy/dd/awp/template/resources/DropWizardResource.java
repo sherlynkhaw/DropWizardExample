@@ -1,3 +1,4 @@
+//resource class
 package academy.dd.awp.template.resources;
 
 

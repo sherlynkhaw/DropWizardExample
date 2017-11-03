@@ -1,3 +1,4 @@
+//Representation class
 package academy.dd.awp.template.core;
 
 import com.fasterxml.jackson.annotation.JsonProperty;

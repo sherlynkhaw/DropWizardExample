@@ -1,3 +1,4 @@
+//Configuration Class
 package academy.dd.awp.template;
 
 import io.dropwizard.Configuration;

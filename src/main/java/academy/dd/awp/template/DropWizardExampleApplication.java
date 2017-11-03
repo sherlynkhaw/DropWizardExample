@@ -1,3 +1,4 @@
+//Application Class
 package academy.dd.awp.template;
 
 import academy.dd.awp.template.health.TemplateHealthCheck;
@@ -17,6 +18,7 @@ public class DropWizardExampleApplication extends Application<DropWizardExampleC
         return "hello-world";
     }
 
+    //used to configure aspects of the application required before the application is run
     @Override
     public void initialize(Bootstrap<DropWizardExampleConfiguration> bootstrap) {
         // nothing to do yet
@@ -24,6 +26,7 @@ public class DropWizardExampleApplication extends Application<DropWizardExampleC
 
     @Override
     public void run(DropWizardExampleConfiguration configuration, Environment environment) {
+        //Registering the resource
         final DropWizardResource resource = new DropWizardResource(
                 configuration.getTemplate(),
                 configuration.getDefaultName()
@@ -32,7 +35,7 @@ public class DropWizardExampleApplication extends Application<DropWizardExampleC
         final TemplateHealthCheck healthCheck =
                 new TemplateHealthCheck(configuration.getTemplate());
         environment.healthChecks().register("template", healthCheck);
-        environment.jersey().register(resource);
+        environment.jersey().register(resource); //Jersey environment
 
     }
 }
